@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erxprescriptionuser.Activity.SignupActivity">
+
+    <LinearLayout
+        android:id="@+id/llBack"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/drawable_bitmap_blue"
+            />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/signup_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llBack" />
+
+
+    <TextView
+        android:id="@+id/ccode"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:drawableEnd="@drawable/flag_uae"
+        android:text="+971"
+        android:textColor="@android:color/black"
+        android:drawablePadding="12dp"
+        android:paddingEnd="14dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:gravity="center_vertical"
+        android:visibility="visible"
+        app:ccp_textSize="@dimen/normal_text_size"
+        app:layout_constraintStart_toStartOf="@+id/edFullName"
+        app:layout_constraintTop_toBottomOf="@+id/edFullName" />
+
+
+    <EditText
+        android:id="@+id/edFullName"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/full_name"
+        android:textAlignment="viewStart"
+        android:digits="@string/name_validation"
+        android:paddingStart="30dp"
+        android:maxLength="30"
+        android:paddingEnd="10dp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+    <EditText
+        android:id="@+id/edMobileNo"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/mobile_number"
+        android:paddingStart="30dp"
+        android:digits="@string/number_validation"
+        android:paddingEnd="10dp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:maxLength="10"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/ccode"
+        app:layout_constraintEnd_toEndOf="@+id/edFullName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ccode"
+        app:layout_constraintTop_toTopOf="@+id/ccode" />
+
+
+    <EditText
+        android:id="@+id/edEmailId"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/email_id"
+        android:paddingStart="30dp"
+        android:paddingEnd="10dp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edMobileNo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ccode"
+        app:layout_constraintTop_toBottomOf="@+id/edMobileNo" />
+
+
+    <EditText
+        android:id="@+id/edEmiratesId"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/emirates_id_number"
+        android:paddingStart="30dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textAlignment="viewStart"
+        android:inputType="text"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edEmailId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edEmailId"
+        app:layout_constraintTop_toBottomOf="@+id/edEmailId" />
+
+    <ImageView
+        android:id="@+id/ivEmitrateNumber"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="7dp"
+        android:padding="12dp"
+        android:src="@drawable/cam_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/edEmiratesId"
+        app:layout_constraintEnd_toEndOf="@+id/edEmiratesId"
+        app:layout_constraintTop_toTopOf="@+id/edEmiratesId" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInsurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_blue_corner"
+        app:layout_constraintStart_toStartOf="@+id/edEmiratesId"
+        app:layout_constraintTop_toBottomOf="@+id/edEmiratesId">
+
+        <ImageView
+            android:id="@+id/ivInsuranceCamera"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="15dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cam_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tvInsuranceCardPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/font"
+        android:text="@string/insurance_card_picture_front_side"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/normal_text_size"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/clInsurance"
+        app:layout_constraintTop_toBottomOf="@+id/clInsurance" />
+
+    <CheckBox
+        android:id="@+id/cbNotAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/not_available"
+        android:fontFamily="@font/font"
+        android:textStyle="normal"
+        android:paddingStart="11dp"
+        android:textSize="@dimen/large_text_size"
+        android:button="@drawable/selector_checkbox"
+        app:layout_constraintStart_toStartOf="@+id/tvInsuranceCardPicture"
+        app:layout_constraintTop_toBottomOf="@+id/tvInsuranceCardPicture" />
+
+
+    <EditText
+        android:id="@+id/edDob"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/dob"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:focusable="false"
+        android:paddingStart="30dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edEmiratesId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cbNotAvailable"
+        app:layout_constraintTop_toBottomOf="@+id/cbNotAvailable" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/font"
+        android:text="@string/gender"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/normal_text_size"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/edDob"
+        app:layout_constraintTop_toBottomOf="@+id/edDob" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/drawable_radio_selector"
+            android:fontFamily="@font/font"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/male"
+            android:textColor="@color/text_selector"
+            android:textSize="@dimen/normal_text_size"
+            android:textStyle="normal" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:button="@drawable/drawable_radio_selector"
+            android:fontFamily="@font/font"
+            android:paddingStart="15dp"
+            android:text="@string/female"
+            android:textColor="@color/text_selector"
+            android:textSize="@dimen/normal_text_size"
+            android:textStyle="normal" />
+
+    </RadioGroup>
+
+
+    <EditText
+        android:id="@+id/edLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/select_location"
+        android:paddingStart="30dp"
+        android:focusable="false"
+        android:paddingEnd="30dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:imeOptions="actionNext"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textAlignment="viewStart"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edEmiratesId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/font"
+        android:text="@string/or"
+        android:textColor="@color/grey"
+        android:textSize="16dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edLocation"
+        app:layout_constraintStart_toStartOf="@+id/edLocation"
+        app:layout_constraintTop_toBottomOf="@+id/edLocation" />
+
+
+    <EditText
+        android:id="@+id/edAddtionalMobileNo"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/additional_mobile_number"
+        android:paddingStart="30dp"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:maxLength="10"
+        android:inputType="number"
+        android:paddingEnd="10dp"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edEnterAddress"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edEnterAddress"
+        app:layout_constraintTop_toBottomOf="@+id/edEnterAddress" />
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/create_password"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        android:inputType="textPassword"
+        android:paddingStart="30dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edEmiratesId"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edAddtionalMobileNo"
+        app:layout_constraintTop_toBottomOf="@+id/edAddtionalMobileNo" />
+
+    <ImageView
+        android:id="@+id/ivPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginEnd="12dp"
+        android:paddingEnd="12dp"
+        android:src="@drawable/eye"
+        app:layout_constraintBottom_toBottomOf="@+id/edPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edPassword"
+        app:layout_constraintTop_toTopOf="@+id/edPassword" />
+
+
+    <EditText
+        android:id="@+id/edConfirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext"
+        android:fontFamily="@font/font"
+        android:hint="@string/confirm_passsword"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"
+        android:paddingStart="30dp"
+        android:textAlignment="viewStart"
+        android:paddingEnd="20dp"
+        android:singleLine="true"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edPassword"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edPassword" />
+
+    <ImageView
+        android:id="@+id/ivConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginEnd="12dp"
+        android:paddingEnd="12dp"
+        android:src="@drawable/eye"
+        app:layout_constraintBottom_toBottomOf="@+id/edConfirmPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edConfirmPassword"
+        app:layout_constraintTop_toTopOf="@+id/edConfirmPassword" />
+
+    <EditText
+        android:id="@+id/edEnterAddress"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/drawable_selector_edittext2"
+        android:fontFamily="@font/font"
+        android:gravity="top|left"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        android:hint="@string/enter_your_address"
+        android:paddingStart="30dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="30dp"
+        android:textColor="@color/hint_selector"
+        android:textColorHint="@color/hint_selector"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/edLocation"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/edLocation"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+
+    <CheckBox
+        android:id="@+id/cbTerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:button="@drawable/selector_checkbox"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTermCondtion"
+        app:layout_constraintStart_toStartOf="@+id/edConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edConfirmPassword"
+        app:layout_constraintTop_toTopOf="@+id/tvTermCondtion" />
+
+    <TextView
+        android:id="@+id/tvTermCondtion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/font"
+        android:text="@string/accept_amp_conditions"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/cbTerms"
+        app:layout_constraintTop_toBottomOf="@+id/edConfirmPassword" />
+
+
+
+
+    <Button
+        android:id="@+id/btnSingup"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/corner_stroke"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/font"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edConfirmPassword"
+        app:layout_constraintStart_toStartOf="@+id/edConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvTermCondtion" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

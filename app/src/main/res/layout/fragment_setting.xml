@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.SettingFragment">
+
+
+    <TextView
+        android:id="@+id/tvAboutUs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:drawableLeft="@drawable/about_us"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/font"
+        android:padding="15dp"
+        android:text="@string/about_us"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvContactUs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/contactus"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/font"
+        android:padding="15dp"
+        android:text="@string/contact_us"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/tvAboutUs"
+        app:layout_constraintStart_toStartOf="@+id/tvAboutUs"
+        app:layout_constraintTop_toBottomOf="@+id/tvAboutUs" />
+
+    <TextView
+        android:id="@+id/tvSupport"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/support"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/font"
+        android:padding="15dp"
+        android:text="@string/support"
+        android:visibility="gone"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/tvContactUs"
+        app:layout_constraintStart_toStartOf="@+id/tvContactUs"
+        app:layout_constraintTop_toBottomOf="@+id/tvContactUs" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/font"
+        android:padding="15dp"
+        android:text="@string/push_notifications"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toStartOf="@+id/notiBtn"
+        app:layout_constraintStart_toStartOf="@+id/tvContactUs"
+        app:layout_constraintTop_toBottomOf="@+id/tvSupport" />
+
+    <TextView
+        android:id="@+id/tvChangeLanguage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/font"
+        android:padding="15dp"
+        android:text="@string/change_language"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/tvContactUs"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="@+id/tvChangeLanguage"
+        app:layout_constraintStart_toStartOf="@+id/tvChangeLanguage"
+        app:layout_constraintTop_toBottomOf="@+id/tvChangeLanguage">
+
+        <RadioButton
+            android:id="@+id/rbEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:button="@drawable/selector_checkbox"
+            android:fontFamily="@font/font"
+            android:paddingStart="12dp"
+            android:text="@string/english"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="normal" />
+
+        <RadioButton
+            android:id="@+id/rbArabic"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_weight="1"
+            android:button="@drawable/selector_checkbox"
+            android:fontFamily="@font/font"
+            android:paddingStart="12dp"
+            android:text="@string/arabic"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textStyle="normal" />
+
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/tvTerm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/font"
+        android:padding="15dp"
+        android:text="@string/term_of_services"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/tvChangeLanguage"
+        app:layout_constraintStart_toStartOf="@+id/tvChangeLanguage"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <TextView
+        android:id="@+id/tvPrivacy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/font"
+        android:padding="15dp"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/tvTerm"
+        app:layout_constraintStart_toStartOf="@+id/tvTerm"
+        app:layout_constraintTop_toBottomOf="@+id/tvTerm" />
+
+    <ToggleButton
+        android:id="@+id/notiBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_toggle_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="@+id/textView27"
+        app:layout_constraintEnd_toEndOf="@+id/tvContactUs"
+        app:layout_constraintTop_toBottomOf="@+id/tvSupport" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

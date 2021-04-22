@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "445734677565",
+    "firebase_url": "https://erxprescription.firebaseio.com",
+    "project_id": "erxprescription",
+    "storage_bucket": "erxprescription.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445734677565:android:1996c7da550a2f1ecf8e54",
+        "android_client_info": {
+          "package_name": "com.erxprescriptionuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445734677565-7pttrkfgrevkn6k373ucpbr2va17tk18.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.erxprescriptionuser",
+            "certificate_hash": "8ce3c2db66866c2b848bb84203a0353207b0b3a3"
+          }
+        },
+        {
+          "client_id": "445734677565-gklkbmsvdr76hiukve4a4j6btbb16esk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOdH0vOF5fw6xtGueq1OBVd89wueXJL4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445734677565-gklkbmsvdr76hiukve4a4j6btbb16esk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clSubMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/edSearch"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="@font/font"
+        android:hint="@string/search_provider_name"
+        android:paddingStart="12dp"
+        android:paddingEnd="24dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="@dimen/normal_text_size"
+        android:textAlignment="viewStart"
+        android:elevation="1dp"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:textStyle="normal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/subMainToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivproviderNameSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:src="@drawable/drawable_bitmap_search"
+        app:layout_constraintBottom_toBottomOf="@+id/edSearch"
+        app:layout_constraintEnd_toEndOf="@+id/subMainToolbar"
+        app:layout_constraintTop_toTopOf="@+id/edSearch" />
+
+
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/subMainToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menu" />
+
+            <ImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="14dp"
+                android:src="@drawable/notification" />
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignTop="@+id/ivNotification"
+                android:layout_alignEnd="@+id/ivNotification"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/drawable_blue_circle"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginStart="7dp"
+                android:textColor="@android:color/white" />
+
+
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="7dp"
+                android:layout_toStartOf="@+id/ivNotification"
+                android:src="@drawable/drawable_bitmap_search" />
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
