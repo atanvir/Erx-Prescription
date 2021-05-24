@@ -53,11 +53,10 @@ public class RequestOfferAdapter extends RecyclerView.Adapter<RequestOfferAdapte
         holder.binding.tvRating.setText(""+list.get(position).getProviderData().getAvgRating());
         holder.binding.tvName.setText(list.get(position).getProviderData().getFullName());
         holder.binding.tvMessage.setText(list.get(position).getMessage());
-//        if(list.get(position).getMessage().equalsIgnoreCase("")) {
-//            holder.binding.tvMessage.setVisibility(View.GONE);
-//        }
 
-
+        if(list.get(position).getMessage().equalsIgnoreCase("")) {
+            holder.binding.tvMessage.setVisibility(View.GONE);
+        }
     }
 
     @Override

@@ -107,7 +107,7 @@ public class PrescriptionDetailActivity extends AppCompatActivity implements Vie
         switch (v.getId())
         {
             case R.id.tvInvoice:
-                new DownloadTask(this,invoice);
+            new DownloadTask(this,invoice);
             break;
         }
     }
@@ -219,9 +219,7 @@ public class PrescriptionDetailActivity extends AppCompatActivity implements Vie
 
                     //If Connection response is not OK then show Logs
                     if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                        Log.e(TAG, "Server returned HTTP " + c.getResponseCode()
-                                + " " + c.getResponseMessage());
-
+                        Log.e(TAG, "Server returned HTTP " + c.getResponseCode() + " " + c.getResponseMessage());
                     }
 
 
@@ -258,7 +256,6 @@ public class PrescriptionDetailActivity extends AppCompatActivity implements Vie
                     is.close();
 
                 } catch (Exception e) {
-
                     //Read exception if something went wrong
                     e.printStackTrace();
                     outputFile = null;
@@ -271,10 +268,9 @@ public class PrescriptionDetailActivity extends AppCompatActivity implements Vie
     }
 
     public class CheckForSDCard {
-        //Check If SD Card is present or not method
+
         public boolean isSDCardPresent() {
-            if (Environment.getExternalStorageState().equals(
-                    Environment.MEDIA_MOUNTED)) {
+            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                 return true;
             }
             return false;

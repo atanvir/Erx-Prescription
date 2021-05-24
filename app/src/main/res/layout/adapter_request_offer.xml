@@ -103,7 +103,7 @@
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/normal_text_size"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="@+id/textView26"
                 app:layout_constraintStart_toStartOf="@+id/ciUser"
