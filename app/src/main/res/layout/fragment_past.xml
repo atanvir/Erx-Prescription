@@ -39,7 +39,7 @@
             android:background="@drawable/login_btn_selectr"
             android:text="@string/sort"
             android:visibility="gone"
-            android:fontFamily="@font/font"
+            android:fontFamily="@font/lato_regular"
             android:textStyle="normal"
             android:drawablePadding="12dp"
             android:elevation="1dp"

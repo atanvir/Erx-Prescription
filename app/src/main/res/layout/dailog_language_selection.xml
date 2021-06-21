@@ -32,12 +32,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textView23"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/font"
+                android:fontFamily="@font/lato_regular"
                 android:text="@string/language_selection"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
@@ -58,7 +58,7 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/corner_stroke"
                 android:backgroundTint="@color/colorPrimary"
-                android:fontFamily="@font/font"
+                android:fontFamily="@font/lato_regular"
                 android:text="@string/english"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -75,7 +75,7 @@
                 android:layout_height="55dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/corner_stroke"
-                android:fontFamily="@font/font"
+                android:fontFamily="@font/lato_regular"
                 android:text="@string/arabic"
                 android:textAllCaps="false"
                 android:backgroundTint="@color/grey2"
@@ -95,7 +95,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="@font/font"
+                android:fontFamily="@font/lato_regular"
                 android:padding="10dp"
                 android:text="@string/next"
                 android:textColor="#3C87F7"

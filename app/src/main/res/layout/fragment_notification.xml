@@ -47,7 +47,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/login_btn_selectr"
         android:text="@string/clear_all"
-        android:fontFamily="@font/font"
+        android:fontFamily="@font/lato_regular"
         android:textStyle="normal"
         android:textAllCaps="false"
         android:textColor="@color/white"

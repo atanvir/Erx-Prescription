@@ -69,7 +69,7 @@
             android:backgroundTint="@android:color/white"
             android:cursorVisible="true"
             android:elevation="3dp"
-            android:fontFamily="@font/font"
+            android:fontFamily="@font/lato_regular"
             android:hint="@string/type_here"
             android:textAlignment="viewStart"
             android:imeOptions="actionDone"

@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:background="@color/colorPrimaryDark"
-        android:fontFamily="@font/font"
+        android:fontFamily="@font/lato_regular"
         android:hint="@string/search_provider_name"
         android:paddingStart="12dp"
         android:paddingEnd="24dp"
