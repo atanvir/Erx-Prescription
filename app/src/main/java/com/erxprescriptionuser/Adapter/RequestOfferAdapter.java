@@ -82,11 +82,11 @@ public class RequestOfferAdapter extends RecyclerView.Adapter<RequestOfferAdapte
             bundle.putString("prescriptionOfferId", list.get(getAdapterPosition()).getId());
             bundle.putString("currency",list.get(getAdapterPosition()).getCurrency());
             bundle.putString("amount",list.get(getAdapterPosition()).getAmount());
+            bundle.putString("insuranceType",list.get(getAdapterPosition()).getInsuranceType());
             bundle.putInt("FragmentId",binding.replaceFrame2.getId());
 
             switch (v.getId())
             {
-
                 case R.id.btnAccept:
                 Fragment acceptOfferFragment=new AcceptOfferFragment();
                 acceptOfferFragment.setArguments(bundle);
@@ -98,6 +98,7 @@ public class RequestOfferAdapter extends RecyclerView.Adapter<RequestOfferAdapte
                 rejectOfferFragment.setArguments(bundle);
                 loadFrament(rejectOfferFragment);
                 break;
+
             }
         }
 

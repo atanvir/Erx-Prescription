@@ -60,6 +60,10 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -210,6 +214,13 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
                 if(checkBox.isChecked()) {
                     dialog.dismiss();
+//                    if(getIntent().getStringExtra("insuranceType")!=null ){
+//                        if(getIntent().getStringExtra("insuranceType").equalsIgnoreCase("Full insurance coverage,")){
+//                            acceptPrescriptionRequestApi();
+//                        }else chargeApi();
+//                    }
+//                    else chargeApi();
+
                     chargeApi();
                 }else
                 {
@@ -260,37 +271,39 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    private void acceptPrescriptionRequestApi(String transactionId,String paymentType,String status) {
+    private void acceptPrescriptionRequestApi() {
         try {
+            CommonUtils.showLoadingDialog(this);
             ServicesInterface anInterface = ServicesConnection.getInstance().createService(this);
             Call<CommonModel> call = anInterface.acceptPrescriptionRequest(getValue("prescriptionOfferId"),
                     longitute,
                     longitute,
-                    "Nawada New Delhi","Pick Up",
-                    "1","02-Apr-2021","AED",transactionId,
-                    paymentType,status);
+                    address,"Delivery",
+                    getValue("amount"),new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date()),"AED","123",
+                    "Full insurance coverage","SUCCESS");
             ServicesConnection.getInstance().enqueueWithoutRetry(call, this, false, new Callback<CommonModel>() {
                 @Override
                 public void onResponse(Call<CommonModel> call, Response<CommonModel> response) {
+                    CommonUtils.dismissLoadingDialog();
                     if(response.isSuccessful())
                     {
-                        CommonUtils.dismissLoadingDialog();
                         CommonModel serverResponse=response.body();
                         if(serverResponse.getStatus().equalsIgnoreCase(ParamEnum.SUCCESS.theValue()))
                         {
+                            Toast.makeText(ChooseAddressActivity.this, serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(ChooseAddressActivity.this,MainActivity.class));
 
                         }else if(serverResponse.getStatus().equalsIgnoreCase("500") || serverResponse.getStatus().equalsIgnoreCase(ParamEnum.FAILURE.theValue()))
                         {
-                            Intent intent=new Intent();
-                            intent.putExtra("status", serverResponse.getMessage());
-                            setResult(RESULT_CANCELED,intent);
-                            finish();
+                            CommonUtils.showSnackBar(ChooseAddressActivity.this,serverResponse.getMessage());
                         }
                     }
                 }
 
                 @Override
                 public void onFailure(Call<CommonModel> call, Throwable t) {
+                    CommonUtils.dismissLoadingDialog();
+
                     Log.e("failure",t.getMessage());
 
                 }

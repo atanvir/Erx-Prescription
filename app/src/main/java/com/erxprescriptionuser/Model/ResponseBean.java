@@ -10,12 +10,21 @@ import java.util.List;
 
  public class ResponseBean implements Parcelable {
 
+     @SerializedName("insuranceType")
+     @Expose
+     private String insuranceType;
+
     @SerializedName("_id")
     @Expose
     private String id;
     @SerializedName("location")
     @Expose
     private Location location;
+
+
+
+
+
     @SerializedName("status")
     @Expose
     private String status;
@@ -188,6 +197,14 @@ import java.util.List;
      @Expose
      private String description;
 
+     public String getInsuranceType() {
+         return insuranceType;
+     }
+
+     public void setInsuranceType(String insuranceType) {
+         this.insuranceType = insuranceType;
+     }
+
      public String getDescription() {
          return description;
      }
@@ -205,6 +222,7 @@ import java.util.List;
      }
 
      protected ResponseBean(Parcel in) {
+         insuranceType = in.readString();
          id = in.readString();
          status = in.readString();
          userType = in.readString();
@@ -320,10 +338,6 @@ import java.util.List;
      public void setChargeData(ChargeResponse chargeData) {
          this.chargeData = chargeData;
      }
-
-
-
-
 
      public String getRoomId() {
          return roomId;
@@ -692,6 +706,7 @@ import java.util.List;
 
      @Override
      public void writeToParcel(Parcel dest, int flags) {
+         dest.writeString(insuranceType);
          dest.writeString(id);
          dest.writeString(status);
          dest.writeString(userType);
