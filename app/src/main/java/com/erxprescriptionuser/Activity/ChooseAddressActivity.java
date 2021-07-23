@@ -214,14 +214,14 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
                 if(checkBox.isChecked()) {
                     dialog.dismiss();
-//                    if(getIntent().getStringExtra("insuranceType")!=null ){
-//                        if(getIntent().getStringExtra("insuranceType").equalsIgnoreCase("Full insurance coverage,")){
-//                            acceptPrescriptionRequestApi();
-//                        }else chargeApi();
-//                    }
-//                    else chargeApi();
+                    if(getIntent().getStringExtra("insuranceType")!=null ){
+                        if(getIntent().getStringExtra("insuranceType").equalsIgnoreCase("Full insurance coverage,")){
+                            acceptPrescriptionRequestApi();
+                        }else chargeApi();
+                    }
+                    else chargeApi();
 
-                    chargeApi();
+//                    chargeApi();
                 }else
                 {
                     Toast.makeText(ChooseAddressActivity.this, getString(R.string.mark_as_aggred_to_term), Toast.LENGTH_SHORT).show();

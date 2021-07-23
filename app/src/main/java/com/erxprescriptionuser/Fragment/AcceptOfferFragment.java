@@ -129,7 +129,7 @@ public class AcceptOfferFragment extends Fragment implements View.OnClickListene
                     dialog.dismiss();
                     if(getArguments().getString("insuranceType")!=null ){
                         if(getArguments().getString("insuranceType").equalsIgnoreCase("Full insurance coverage,")){
-                            chargeApi();
+                            acceptPrescriptionRequestApi();
                         }else chargeApi();
                     }
                     else chargeApi();
