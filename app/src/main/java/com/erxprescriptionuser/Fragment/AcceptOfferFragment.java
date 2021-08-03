@@ -127,9 +127,9 @@ public class AcceptOfferFragment extends Fragment implements View.OnClickListene
             public void onClick(View v) {
                 if(checkBox.isChecked()) {
                     dialog.dismiss();
-                    if(getArguments().getString("insuranceType")!=null ){
-                        if(getArguments().getString("insuranceType").equalsIgnoreCase("Full insurance coverage,")){
-                            acceptPrescriptionRequestApi();
+
+                    if(getArguments().getString("amount")!=null){
+                        if(getArguments().getString("amount").equalsIgnoreCase("") || getArguments().getString("amount").equalsIgnoreCase("0")){ acceptPrescriptionRequestApi();
                         }else chargeApi();
                     }
                     else chargeApi();
@@ -212,21 +212,31 @@ public class AcceptOfferFragment extends Fragment implements View.OnClickListene
                     if(response.isSuccessful())
                     {
                         CommonModel serverResponse=response.body();
-                        if(serverResponse.getMessage().equalsIgnoreCase(getString(R.string.payment_request_places)))
-                        {
-                            Intent intent= new Intent(getActivity(), GoShellWebview.class);
-                            intent.putExtra("data", serverResponse.getData());
-                            intent.putExtra("prescriptionOfferId", getValue("prescriptionOfferId"));
-                            intent.putExtra("deliveryType", "Pick Up");
-                            intent.putExtra(SPreferenceKey.LONGITUTE,""+SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.LONGITUTE));
-                            intent.putExtra(SPreferenceKey.LATITUTE, ""+SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.LATITUTE));
-                            intent.putExtra(SPreferenceKey.ADDRESS, SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.ADDRESS));
-                            startActivityForResult(intent, GO_SHELL);
-
-                        }else
-                        {
-                            CommonUtils.showSnackBar(getActivity(),serverResponse.getMessage());
-                        }
+                        Intent intent= new Intent(getActivity(), GoShellWebview.class);
+                        intent.putExtra("data", serverResponse.getData());
+                        intent.putExtra("prescriptionOfferId", getValue("prescriptionOfferId"));
+                        intent.putExtra("deliveryType", "Pick Up");
+                        intent.putExtra("amount",getValue("amount"));
+                        intent.putExtra(SPreferenceKey.LONGITUTE,""+SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.LONGITUTE));
+                        intent.putExtra(SPreferenceKey.LATITUTE, ""+SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.LATITUTE));
+                        intent.putExtra(SPreferenceKey.ADDRESS, SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.ADDRESS));
+                        startActivityForResult(intent, GO_SHELL);
+//                        if(serverResponse.getMessage().equalsIgnoreCase(getString(R.string.payment_request_places)))
+//                        {
+//                            Intent intent= new Intent(getActivity(), GoShellWebview.class);
+//                            intent.putExtra("data", serverResponse.getData());
+//                            intent.putExtra("prescriptionOfferId", getValue("prescriptionOfferId"));
+//                            intent.putExtra("deliveryType", "Pick Up");
+//                            intent.putExtra("amount",getValue("amount"));
+//                            intent.putExtra(SPreferenceKey.LONGITUTE,""+SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.LONGITUTE));
+//                            intent.putExtra(SPreferenceKey.LATITUTE, ""+SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.LATITUTE));
+//                            intent.putExtra(SPreferenceKey.ADDRESS, SharedPreferenceWriter.getInstance(getActivity()).getString(SPreferenceKey.ADDRESS));
+//                            startActivityForResult(intent, GO_SHELL);
+//
+//                        }else
+//                        {
+//                            CommonUtils.showSnackBar(getActivity(),serverResponse.getMessage());
+//                        }
                     }
                 }
 
@@ -270,7 +280,6 @@ public class AcceptOfferFragment extends Fragment implements View.OnClickListene
                 CommonUtils.showSnackBar(getActivity(), data.getStringExtra("status"));
             }
             break;
-
         }
     }
 

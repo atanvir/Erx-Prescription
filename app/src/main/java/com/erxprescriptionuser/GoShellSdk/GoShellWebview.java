@@ -193,7 +193,7 @@ public class GoShellWebview  extends AppCompatActivity{
     @Override
     public void onBackPressed() {
         Intent intent=new Intent();
-        intent.putExtra("status","Cancelled");
+        intent.putExtra("status",getString(R.string.payment_cancel));
         setResult(RESULT_CANCELED,intent);
         finish();
     }

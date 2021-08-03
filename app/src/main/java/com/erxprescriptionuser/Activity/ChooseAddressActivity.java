@@ -214,14 +214,14 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
                 if(checkBox.isChecked()) {
                     dialog.dismiss();
-                    if(getIntent().getStringExtra("insuranceType")!=null ){
-                        if(getIntent().getStringExtra("insuranceType").equalsIgnoreCase("Full insurance coverage,")){
+                    if(getIntent().getStringExtra("amount")!=null ){
+                        if(getIntent().getStringExtra("amount").equalsIgnoreCase("")  || getIntent().getStringExtra("amount").equalsIgnoreCase("0")){
                             acceptPrescriptionRequestApi();
                         }else chargeApi();
                     }
                     else chargeApi();
 
-//                    chargeApi();
+                    //chargeApi();
                 }else
                 {
                     Toast.makeText(ChooseAddressActivity.this, getString(R.string.mark_as_aggred_to_term), Toast.LENGTH_SHORT).show();
@@ -241,22 +241,23 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
                     if(response.isSuccessful())
                     {
                         CommonModel serverResponse=response.body();
-                        if(serverResponse.getMessage().equalsIgnoreCase(getString(R.string.payment_request_places)))
-                        {
-                            Intent intent= new Intent(ChooseAddressActivity.this, GoShellWebview.class);
-                            intent.putExtra("data", serverResponse.getData());
-                            intent.putExtra("prescriptionOfferId", getValue("prescriptionOfferId"));
-                            intent.putExtra("deliveryType", "Delivery");
-                            intent.putExtra(SPreferenceKey.LONGITUTE,""+longitute);
-                            intent.putExtra(SPreferenceKey.LATITUTE, ""+latitue);
-                            intent.putExtra(SPreferenceKey.ADDRESS, address);
-                            startActivityForResult(intent, GO_SHELL);
-//                            acceptPrescriptionRequestApi("124223423","ONLINE","INITIATED");
+                        Intent intent= new Intent(ChooseAddressActivity.this, GoShellWebview.class);
+                        intent.putExtra("data", serverResponse.getData());
+                        intent.putExtra("prescriptionOfferId", getValue("prescriptionOfferId"));
+                        intent.putExtra("deliveryType", "Delivery");
+                        intent.putExtra(SPreferenceKey.LONGITUTE,""+longitute);
+                        intent.putExtra(SPreferenceKey.LATITUTE, ""+latitue);
+                        intent.putExtra(SPreferenceKey.ADDRESS, address);
+                        startActivityForResult(intent, GO_SHELL);
 
-                        }else
-                        {
-                            CommonUtils.showSnackBar(ChooseAddressActivity.this,serverResponse.getMessage());
-                        }
+//                        if(serverResponse.getMessage().equalsIgnoreCase(getString(R.string.payment_request_places) ) || serverResponse.getMessage().equalsIgnoreCase(getString(R.string.payment_done_success)))
+//                        {
+////                            acceptPrescriptionRequestApi("124223423","ONLINE","INITIATED");
+//
+//                        }else
+//                        {
+//                            CommonUtils.showSnackBar(ChooseAddressActivity.this,serverResponse.getMessage());
+//                        }
                     }
                 }
 
@@ -399,12 +400,10 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onConnectionSuspended(int i) {
-
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
     }
 
     @Override
@@ -463,8 +462,6 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-
-
     public  void setUpLocationSettingsTaskStuff() {
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(createLocationRequest());
         builder.setAlwaysShow(true);
@@ -481,6 +478,4 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         return locationRequest;
     }
-
-
 }

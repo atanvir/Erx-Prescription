@@ -215,6 +215,9 @@
     <string name="internet_not_available">Internet Not Available</string>
     <string name="cannot_connect_to_playstore">Cann\'t connect to PlayStore</string>
     <string name="please_turn_gps">Please turn GPS on</string>
+    <string name="payment_done_success">Payment done successfully</string>
+    <string name="payment_cancel">Payment has been cancelled
+</string>
 
 
 </resources>
