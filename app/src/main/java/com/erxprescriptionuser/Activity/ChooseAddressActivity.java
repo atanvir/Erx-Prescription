@@ -214,14 +214,13 @@ public class ChooseAddressActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
                 if(checkBox.isChecked()) {
                     dialog.dismiss();
-                    if(getIntent().getStringExtra("amount")!=null ){
-                        if(getIntent().getStringExtra("amount").equalsIgnoreCase("")  || getIntent().getStringExtra("amount").equalsIgnoreCase("0")){
-                            acceptPrescriptionRequestApi();
-                        }else chargeApi();
-                    }
-                    else chargeApi();
-
-                    //chargeApi();
+//                    if(getIntent().getStringExtra("amount")!=null ){
+//                        if(getIntent().getStringExtra("amount").equalsIgnoreCase("")  || getIntent().getStringExtra("amount").equalsIgnoreCase("0")){
+//                            acceptPrescriptionRequestApi();
+//                        }else chargeApi();
+//                    }
+//                    else chargeApi();
+                    chargeApi();
                 }else
                 {
                     Toast.makeText(ChooseAddressActivity.this, getString(R.string.mark_as_aggred_to_term), Toast.LENGTH_SHORT).show();
